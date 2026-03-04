@@ -22,6 +22,7 @@
 	    <ul>
 		<li>Website created by Andrew (<a target="_blank" class="hyperlink" href="https://github.com/lunaerem">lunaerem</a>), source code available 
 		<a target="_blank" class="hyperlink" href="https://github.com/lunaerem/personal-website">here</a></li>
+		<li>Hosted using <a target="_blank" class="hyperlink" href="https://docs.github.com/en/pages">GitHub Pages</a></li>
 		<li><a target="_blank" class="hyperlink" href="https://vite.dev/">Vite</a>,
 		included under the <a target="_blank" class="hyperlink" href="https://opensource.org/license/MIT">MIT License</a></li>
 		<li><a target="_blank" class="hyperlink" href="https://vuejs.org/">Vue</a>,
