@@ -114,9 +114,19 @@ main {
     flex-grow: 1;
 }
 
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .title-underscore {
     border-bottom: solid;
     border-bottom-width: 2px;
+}
+
+.hyperlink {
+    color: blue;
 }
 
 /*

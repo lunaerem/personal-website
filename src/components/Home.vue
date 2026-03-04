@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div id="flex-wrapper"> 
+    <div class="flex-wrapper"> 
 	<h2>This is my personal website! Feel free to explore!</h2>
 	<div id="wrapper">
 	    <button>
@@ -23,12 +23,6 @@
 </template>
 
 <style scoped>
-#flex-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 #wrapper {
     flex-grow: 1; 
     display: grid;

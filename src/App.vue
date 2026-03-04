@@ -58,7 +58,7 @@ function toggleVideo() {
 	<button @click="tabSelect(3)" class="nav-button">Credits</button>
 	<div id="final-button">
 	    <p @click="toggleVideo()" id="motion-button">Reduce Motion</p>
-	    <button style="width: 100%" onclick="window.open('https://github.com/lunaerem', '_blank')" class="nav-button">My GitHub</button>
+	    <button style="width: 100%; cursor: pointer;" onclick="window.open('https://github.com/lunaerem', '_blank')" class="nav-button">My GitHub</button>
 	</div>
     </aside>
     <main class="transparent-background">
@@ -96,16 +96,4 @@ function toggleVideo() {
     top: -50px;
 }
 
-/*.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}*/
 </style>
