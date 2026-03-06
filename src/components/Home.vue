@@ -6,13 +6,13 @@
     <div class="flex-wrapper"> 
 	<h2>This is my personal website! Feel free to explore!</h2>
 	<div id="wrapper">
-	    <button>
+	    <button @click="$emit('changeTab', 1)">
 		<img alt="About Me" />
 	    </button>
-	    <button>
+	    <button @click="$emit('changeTab', 2)">
 		<img alt="Projects" />
 	    </button>
-	    <button>
+	    <button @click="$emit('changeTab', 3)">
 		<img alt="Credits" />
 	    </button>
 	    <button onclick="window.open('https://github.com/lunaerem', '_blank')">
@@ -26,9 +26,9 @@
 #wrapper {
     flex-grow: 1; 
     display: grid;
-    min-height: 50%;
     gap: 1em;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 #wrapper button {

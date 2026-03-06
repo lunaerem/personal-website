@@ -64,7 +64,7 @@ function toggleVideo() {
     <main class="transparent-background">
 	<h1 class="title-underscore">{{ title }}</h1>
 	<div class="content">
-	    <Home v-if="selectedTab == 0" />
+	    <Home v-if="selectedTab == 0" @change-tab="tabSelect" />
 	    <About v-else-if="selectedTab == 1" msg="2" />
 	    <Projects v-else-if="selectedTab == 2" />
 	    <Credits v-else-if="selectedTab == 3" />
