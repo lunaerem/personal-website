@@ -58,14 +58,14 @@ function toggleVideo() {
 	<button @click="tabSelect(3)" class="nav-button">Credits</button>
 	<div id="final-button">
 	    <p @click="toggleVideo()" id="motion-button">Reduce Motion</p>
-	    <button style="width: 100%; cursor: pointer;" onclick="window.open('https://github.com/lunaerem', '_blank')" class="nav-button">My GitHub</button>
+	    <button style="width: 100%" onclick="window.open('https://github.com/lunaerem', '_blank')" class="nav-button">My GitHub</button>
 	</div>
     </aside>
     <main class="transparent-background">
 	<h1 class="title-underscore">{{ title }}</h1>
 	<div class="content">
 	    <Home v-if="selectedTab == 0" @change-tab="tabSelect" />
-	    <About v-else-if="selectedTab == 1" msg="2" />
+	    <About v-else-if="selectedTab == 1" />
 	    <Projects v-else-if="selectedTab == 2" />
 	    <Credits v-else-if="selectedTab == 3" />
 	</div>

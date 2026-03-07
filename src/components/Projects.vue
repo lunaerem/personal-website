@@ -1,5 +1,17 @@
 <script setup lang="ts">
+import Listing from './Listing.vue'
+import { ref } from 'vue';
 
+const projects = [
+    { "title": "Personal Website", "text": "The website you are viewing now! My personal website made using Vue and Vite.", 
+    "src": "/vite.svg", "alt": "Personal Website Screenshot", "chips": "Chips", "link": "https://github.com/lunaerem/personal-website" },
+    { "title": "yt-download-controller", "text": "A CLI tool to make using yt-dlp a breeze.", 
+    "src": "images/YT-Controller.PNG", "alt": "yt-download-controller Screenshot", "chips": "Chips", "link": "https://github.com/lunaerem/yt-download-controller" },
+    { "title": "Minesweeper C++", "text": "A simple terminal-based clone of Minesweeper made using C++.", 
+    "src": "images/Minesweeper.PNG", "alt": "Minesweeper C++ Screenshot", "chips": "Chips", "link": "https://github.com/lunaerem/minesweeper-cpp" }
+]
+
+const pageNum = ref(0);
 </script>
 
 <template>
@@ -7,29 +19,19 @@
 	<p>Some of the various projects that I have worked on:</p>	
 	<div id="wrapper">
 	    <div class="project">
-		<img src="/vite.svg" alt="Vite logo" class="image" />
-		<div class="project-info">
-		    <div class="project-text">
-			<h3 class="title-underscore">Personal Website</h3>
-			<p>The website you are viewing now! My personal website made using Vue and Vite.</p>
-		    </div>
-		    <div class="project-stats">
-			<div>
-			    Chips
-			</div>
-			<button class="nav-button">Go to Project</button>
-		    </div>
-		</div>
+		<Listing v-bind="projects[pageNum * 3]" />
 	    </div>
 	    <div class="project">
+		<Listing v-bind="projects[pageNum * 3 + 1]" />
 	    </div>
 	    <div class="project">
+		<Listing v-bind="projects[pageNum *3 + 2]" />
 	    </div>
 	</div>
 	<div id="pag-header">
 	    <p style="display: inline">< </p>
-	    <p style="display: inline">01 of 01</p>
-	    <p style="display: inline"> ></p>
+	    <p style="display: inline">{{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
+	    <p style="display: inline" @click="pageNum++"> ></p>
 	</div>
     </div>
 </template>
@@ -54,22 +56,6 @@
     img {
 	width: 100%;
     }
-}
-
-.project-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.project-text {
-    flex-grow: 1;
-}
-
-.project-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #pag-header {
