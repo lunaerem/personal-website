@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import Listing from './Listing.vue'
 import { ref } from 'vue';
-
-const projects = [
-    { "title": "Personal Website", "text": "The website you are viewing now! My personal website made using Vue and Vite.", 
-    "src": "/vite.svg", "alt": "Personal Website Screenshot", "chips": "Chips", "link": "https://github.com/lunaerem/personal-website" },
-    { "title": "yt-download-controller", "text": "A CLI tool to make using yt-dlp a breeze.", 
-    "src": "images/YT-Controller.PNG", "alt": "yt-download-controller Screenshot", "chips": "Chips", "link": "https://github.com/lunaerem/yt-download-controller" },
-    { "title": "Minesweeper C++", "text": "A simple terminal-based clone of Minesweeper made using C++.", 
-    "src": "images/Minesweeper.PNG", "alt": "Minesweeper C++ Screenshot", "chips": "Chips", "link": "https://github.com/lunaerem/minesweeper-cpp" }
-]
+import { projects } from '../projects.ts'
 
 const pageNum = ref(0);
+
+const clickPagination = (dir) => {
+    if(!dir && pageNum.value + 1 != 1) {
+	pageNum.value--;
+    }
+
+    if(dir && pageNum.value + 1 != projects.length / 3) {
+	pageNum.value++;
+    }
+}
 </script>
 
 <template>
@@ -29,9 +31,9 @@ const pageNum = ref(0);
 	    </div>
 	</div>
 	<div id="pag-header">
-	    <p style="display: inline">< </p>
-	    <p style="display: inline">{{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
-	    <p style="display: inline" @click="pageNum++"> ></p>
+	    <p style="display: inline" @click="clickPagination(0)">< </p>
+	    <p style="display: inline">Page {{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
+	    <p style="display: inline" @click="clickPagination(1)"> ></p>
 	</div>
     </div>
 </template>
