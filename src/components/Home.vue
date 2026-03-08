@@ -1,18 +1,20 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 </script>
 
 <template>
     <div class="flex-wrapper"> 
 	<h2>This is my personal website! Feel free to explore!</h2>
 	<div id="wrapper">
-	    <button @click="$emit('changeTab', 1)">
+	    <button @click="router.push('/about')">
 		<img alt="About Me" />
 	    </button>
-	    <button @click="$emit('changeTab', 2)">
+	    <button @click="router.push('/projects')">
 		<img alt="Projects" />
 	    </button>
-	    <button @click="$emit('changeTab', 3)">
+	    <button @click="router.push('/credits')">
 		<img alt="Credits" />
 	    </button>
 	    <button onclick="window.open('https://github.com/lunaerem', '_blank')">
