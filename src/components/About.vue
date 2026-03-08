@@ -3,9 +3,10 @@
 
 <template>
     <div id="about-wrapper">
-	<p>Column #1</p>
-	<p>Column #2</p>
-	<p>Column #3</p>
+	<div style="flex: 1">
+	    <p>Temp</p>
+	</div>
+	<img alt="Image" />
     </div>
 </template>
 

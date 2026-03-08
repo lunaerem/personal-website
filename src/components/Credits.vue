@@ -27,6 +27,8 @@
 		included under the <a target="_blank" class="hyperlink" href="https://opensource.org/license/MIT">MIT License</a></li>
 		<li><a target="_blank" class="hyperlink" href="https://vuejs.org/">Vue</a>,
 		included under the <a target="_blank" class="hyperlink" href="https://opensource.org/license/MIT">MIT License</a></li>
+		<li><a target="_blank" class="hyperlink" href="https://router.vuejs.org/">Vue Router</a>,
+		included under the <a target="_blank" class="hyperlink" href="https://opensource.org/license/MIT">MIT License</a></li>
 	    </ul>
 	</div>
     </div>
