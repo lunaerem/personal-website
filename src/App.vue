@@ -1,26 +1,23 @@
 <script setup lang="ts">
-import Home from './components/Home.vue';
-import About from './components/About.vue';
-import Projects from './components/Projects.vue';
-import Credits from './components/Credits.vue';
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
 function toggleVideo() {
-    var video = document.getElementById('background-video');
-    var button = document.getElementById('motion-button');
-    var paused;
+    let video = document.getElementById('background-video') as HTMLVideoElement;
+    let button = document.getElementById('motion-button');
+    let paused;
 
-    video.paused ? paused = true : paused = false;
+    if(video != null && button != null) {
+	video.paused ? paused = true : paused = false;
 
-    if(paused) {
-	video.play();
-	button.textContent = "Reduce Motion";
-    } else {
-	video.pause();
-	button.textContent = "Enable Motion";
+	if(paused) {
+	    video.play();
+	    button.textContent = "Reduce Motion";
+	} else {
+	    video.pause();
+	    button.textContent = "Enable Motion";
+	}
     }
 }
 </script>

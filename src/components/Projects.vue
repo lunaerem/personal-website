@@ -5,7 +5,7 @@ import { projects } from '../projects.ts'
 
 const pageNum = ref(0);
 
-const clickPagination = (dir) => {
+const clickPagination = (dir: number) => {
     if(!dir && pageNum.value + 1 != 1) {
 	pageNum.value--;
     }
