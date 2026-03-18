@@ -25,9 +25,6 @@
 		in Music Technology—all of the cool tech stuff behind the creation of music—during university.</p>
 	    <hr class="content-border" />
 	    <p><span class="underline">Languages I use Often:</span> C, C++, CSS, HTML, TypeScript</p>
-	    <p><span class="underline">Languages I've used before (I.E. A few times in a university course):</span>
-		ARM, Bash, Java, MySQL, Powershell, Verilog</p>
-
     </div>
 </template>
 
