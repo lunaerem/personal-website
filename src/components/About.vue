@@ -9,20 +9,24 @@
 		applications developer, and spreadsheet enthusiast.</p>
 	    <hr class="content-border" />
 	    <p>I like compiling and organising lots of information about my hobbies,
-		such as video games, books, anime, films, and programming. Even though I
-	     primarily program in C or HTML/CSS/TypeScript, I have a great interest in
-	    video game development, modding, and reverse engineering.</p>
+		such as video games, books, anime, films, and programming. Even though I mostly
+		make websites or computer applications, I additionally have a great interest in
+		reverse engineering, video game development, modding. I also have an amateur-level 
+		interest in music making and mixing, which is why I minored in Music Technology—all of the 
+		cool tech stuff behind the creation of music—in university.</p>
 	    <hr class="content-border" />
-	    <p>Languages I use Often: C, C++, HTML, CSS, TypeScript</p>
-	    <p>Languages I've used before (I.E. A few times in a university course):
-		Verilog, MySQL, ARM, Java</p>
+	    <p><span class="underline">Languages I use Often:</span> C, C++, CSS, HTML, TypeScript</p>
+	    <p><span class="underline">Languages I've used before (I.E. A few times in a university course):</span>
+		ARM, Bash, Java, MySQL, Powershell, Verilog</p>
 	</div>
 	<div id="edu-div">
 	    <h2>Education</h2>
 	    <h3>University</h3> 
-	    <p>Graduated from a 4-year University</p>
-	    <p>Bachelors Degree in Software Engineering</p>
-	    <p>Minored in Music Technology</p>
+	    <ul>
+		<li>Graduated from a 4-year University</li>
+		<li>Bachelor's Degree in Software Engineering</li>
+		<li>Minored in Music Technology</li>
+	    </ul>
 	</div>
     </div>
 </template>
@@ -45,10 +49,15 @@
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2); 
     color: white; 
     border-radius: 10px;
+    padding: 1rem;
 }
 
 .content-border {
     border: 0;
     border-top: 2px solid #ffffff;
+}
+
+.underline {
+    text-decoration: underline;
 }
 </style>
