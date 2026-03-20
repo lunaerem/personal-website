@@ -32,6 +32,11 @@ const clickPagination = (dir: number) => {
 	</div>
 	<div id="pag-header">
 	    <p style="display: inline" @click="clickPagination(0)">< </p>
+
+	    <svg viewBox="0 0 24 24" fill="none" height="1lh" @click="clickPagination(0)">
+		<path d="m14 16-4-4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+		</path>
+	    </svg>
 	    <p style="display: inline">Page {{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
 	    <p style="display: inline" @click="clickPagination(1)"> ></p>
 	</div>
