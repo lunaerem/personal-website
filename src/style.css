@@ -28,6 +28,10 @@ body {
   place-content: center;
   height: 100dvh;
 }
+
+button {
+    color: white;
+}
 /*
 h1 {
   font-size: 3.2em;
