@@ -23,7 +23,7 @@ function toggleVideo() {
 </script>
 
 <template>
-    <video id="background-video" muted loop autoplay>
+    <video id="background-video" muted loop autoplay playsinline webkit-playsinline>
 	<source src="./assets/BackgroundAnim.mp4" type="video/mp4">
     </video>
     <aside class="transparent-background">
