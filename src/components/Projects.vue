@@ -31,14 +31,17 @@ const clickPagination = (dir: number) => {
 	    </div>
 	</div>
 	<div id="pag-header">
-	    <p style="display: inline" @click="clickPagination(0)">< </p>
-
-	    <svg viewBox="0 0 24 24" fill="none" height="1lh" @click="clickPagination(0)">
-		<path d="m14 16-4-4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(0)">
+		<path d="m14 16-4-4 4-4" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow">
 		</path>
 	    </svg>
-	    <p style="display: inline">Page {{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
-	    <p style="display: inline" @click="clickPagination(1)"> ></p>
+	    <div style="display: flex; align-items: center;">
+		<p style="display: inline; margin: 0">Page {{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
+	    </div>
+	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(1)">
+		<path d="m10 16 4-4-4-4" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow">
+		</path>
+	    </svg>
 	</div>
     </div>
 </template>
@@ -50,7 +53,7 @@ const clickPagination = (dir: number) => {
     gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .project {
@@ -67,5 +70,22 @@ const clickPagination = (dir: number) => {
 
 #pag-header {
     align-self: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 1.5lh;
+    justify-content: center;
+}
+
+svg {
+    cursor: pointer;
+}
+
+svg:hover {
+    
+    path {
+	stroke: grey;
+	filter: drop-shadow(3px 2px 6px rgb(0 0 0 / 1));
+    }
 }
 </style>
