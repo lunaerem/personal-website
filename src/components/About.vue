@@ -7,7 +7,7 @@
 	    <h2 style="margin-top: 0">Education</h2>
 	    <h3>University</h3> 
 	    <hr class="content-border" />
-	    <ul>
+	    <ul style="margin-bottom: 0">
 		<li>Graduated from a 4-year University</li>
 		<li>Bachelor's Degree in Software Engineering</li>
 		<li>Minored in Music Technology</li>
