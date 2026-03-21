@@ -41,6 +41,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 6px;
 }
 
 #chip-container {
@@ -52,39 +53,40 @@ img {
 .chip {
     background-color: #4a5568;
     border-radius: 20px;
-    padding: 8px 16px;
-    color: #cbd5e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 0.15rem solid rgba(255, 255, 255, 1);
+    padding: 0.5rem 1rem;
+    color: white;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.5);
 }
 
 .HTML {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.75);
 }
 
 .CSS {
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.75);
 }
 
 .TypeScript {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.75);
     color: black;
 }
 
 .Vue {
-    background-color: green;
+    background-color: rgba(0, 255, 0, 0.75);
 }
 
 .C {
-    background-color: cyan;
+    background-color: rgba(0, 255, 255, 0.75);
     color: black;
 }
 
 .Cpp {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 .QT {
-    background-color: pink;
+    background-color: rgba(255, 192, 203, 0.75);
     color: black;
 }
 </style>
