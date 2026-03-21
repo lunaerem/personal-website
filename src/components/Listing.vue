@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{ title?: string, text?: string, src?: string, alt?: string, chips?: string, link?: string }>()
+const props = defineProps<{ title?: string, text?: string, src?: string, alt?: string, chips?: string[], link?: string }>()
 
 function openLink() {
     window.open(props.link, '_blank');
@@ -14,8 +14,8 @@ function openLink() {
 	    <p>{{ text }}</p>
 	</div>
 	<div class="project-stats">
-	    <div>
-		<p style="margin: 0">{{ chips }}</p>
+	    <div id="chip-container">
+		<div v-for="(chip, index) in props.chips" class="chip" :class="chip">{{ chips[index] }}</div>
 	    </div>
 	    <button class="nav-button" @click="openLink()">Go to Project</button>
 	</div>
@@ -41,5 +41,50 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.chip {
+    background-color: #4a5568;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: #cbd5e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.HTML {
+    background-color: red;
+}
+
+.CSS {
+    background-color: blue;
+}
+
+.TypeScript {
+    background-color: yellow;
+    color: black;
+}
+
+.Vue {
+    background-color: green;
+}
+
+.C {
+    background-color: cyan;
+    color: black;
+}
+
+.Cpp {
+    background-color: black;
+}
+
+.QT {
+    background-color: pink;
+    color: black;
 }
 </style>
