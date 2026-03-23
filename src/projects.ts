@@ -39,12 +39,4 @@ export const projects = [
 	"chips": ["Cpp", "QT"],
 	"link": "https://github.com/lunaerem/praxis"
     },
-    { 
-	"title": "Placeholder", 
-	"text": "This is a placeholder project description.", 
-	"src": "", 
-	"alt": "Placeholder image alt tag", 
-	"chips": ["HTML", "CSS", "Vue", "TypeScript"],
-	"link": "https://github.com/lunaerem"
-    },
 ]

@@ -3,16 +3,21 @@ import Listing from './Listing.vue'
 import { ref } from 'vue';
 import { projects } from '../projects.ts'
 
-const pageNum = ref(0);
+const pageNum = ref(1);
+const finalPage = ref(Math.ceil(projects.length / 3));
 
 const clickPagination = (dir: number) => {
-    if(!dir && pageNum.value + 1 != 1) {
+    if(!dir && pageNum.value != 1) {
 	pageNum.value--;
     }
-
-    if(dir && pageNum.value + 1 != projects.length / 3) {
+    else if(dir && pageNum.value * 3 < projects.length) {
 	pageNum.value++;
     }
+}
+
+const selectFromProjects = () => {
+    let filtered = projects.slice(pageNum.value * 3 - 3, pageNum.value * 3).filter(obj => obj != undefined);
+    return filtered; 
 }
 </script>
 
@@ -20,27 +25,21 @@ const clickPagination = (dir: number) => {
     <div class="flex-wrapper"> 
 	<p>Some of the various projects that I have worked on:</p>	
 	<div id="wrapper">
-	    <div class="project">
-		<Listing v-bind="projects[pageNum * 3]" />
-	    </div>
-	    <div class="project">
-		<Listing v-bind="projects[pageNum * 3 + 1]" />
-	    </div>
-	    <div class="project">
-		<Listing v-bind="projects[pageNum *3 + 2]" />
+	    <div class="project" v-for="project in selectFromProjects()">
+		<Listing v-bind="project" />
 	    </div>
 	</div>
 	<div id="pag-header">
 	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(0)">
-		<path d="m14 16-4-4 4-4" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow">
-		</path>
+		<path d="m14 16-4-4 4-4" :stroke="pageNum != 1 ? 'white' : 'grey'" 
+		stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
 	    </svg>
 	    <div style="display: flex; align-items: center;">
-		<p style="display: inline; margin: 0">Page {{ pageNum + 1 }} of {{ projects.length / 3 }}</p>
+		<p style="display: inline; margin: 0">Page {{ pageNum }} of {{ finalPage }}</p>
 	    </div>
 	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(1)">
-		<path d="m10 16 4-4-4-4" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow">
-		</path>
+		<path d="m10 16 4-4-4-4" :stroke="pageNum < finalPage ? 'white' : 'grey'" 
+		stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
 	    </svg>
 	</div>
     </div>
