@@ -15,7 +15,7 @@ function openLink() {
 	</div>
 	<div class="project-stats">
 	    <div id="chip-container">
-		<div v-for="(chip, index) in props.chips" class="chip" :class="chip">{{ chips[index] }}</div>
+		<div v-for="(chip, index) in props.chips" class="chip" :class="chip">{{ chips![index] }}</div>
 	    </div>
 	    <button class="nav-button" @click="openLink()">Go to Project</button>
 	</div>
