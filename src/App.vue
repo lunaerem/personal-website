@@ -25,16 +25,17 @@ function toggleVideo() {
 <template>
     <video id="background-video" muted loop autoplay playsinline webkit-playsinline>
 	<source src="./assets/BackgroundAnim.mp4" type="video/mp4">
+	Your browser does not support the video tag.
     </video>
     <nav id="main-nav" class="transparent-background">
 	<h2 class="title-underscore">Navigation</h2>
-	<button @click="router.push('/');" class="nav-button">Home</button>
-	<button @click="router.push('/about');" class="nav-button">About Me</button>
-	<button @click="router.push('/projects');" class="nav-button">Projects</button>
-	<button @click="router.push('/credits');" class="nav-button">Credits</button>
+	<RouterLink to="/" class="nav-button">Home</RouterLink>
+	<RouterLink to="/about" class="nav-button">About Me</RouterLink>
+	<RouterLink to="/projects" class="nav-button">Projects</RouterLink>
+	<RouterLink to="/credits" class="nav-button">Credits</RouterLink>
 	<div id="final-button">
-	    <p @click="toggleVideo()" id="motion-button">Reduce Motion</p>
-	    <button style="width: 100%" onclick="window.open('https://github.com/lunaerem', '_blank')" class="nav-button">My GitHub</button>
+	    <button @click="toggleVideo()" id="motion-button">Reduce Motion</button>
+	    <a href="https://github.com/lunaerem" target="_blank" class="nav-button">My GitHub</a>
 	</div>
     </nav>
     <main class="transparent-background">
@@ -55,6 +56,10 @@ function toggleVideo() {
     cursor: pointer;
     margin: 0;
     text-align: center;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font-size: 16px;
 }
 
 #background-video {

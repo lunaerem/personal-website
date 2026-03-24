@@ -8,18 +8,18 @@ const router = useRouter();
     <div class="flex-wrapper"> 
 	<h2>This is my personal website! Feel free to explore!</h2>
 	<nav id="wrapper">
-	    <button @click="router.push('/about')">
+	    <RouterLink to="/about">
 		<img alt="About Me" />
-	    </button>
-	    <button @click="router.push('/projects')">
+	    </RouterLink>
+	    <RouterLink to="/projects">
 		<img alt="Projects" />
-	    </button>
-	    <button @click="router.push('/credits')">
+	    </RouterLink>
+	    <RouterLink to="/credits">
 		<img alt="Credits" />
-	    </button>
-	    <button onclick="window.open('https://github.com/lunaerem', '_blank')">
+	    </RouterLink>
+	    <a target="_blank" href="https://github.com/lunaerem">
 		<img alt="My GitHub" />
-	    </button>
+	    </a>
 	</nav>
     </div>
 </template>
@@ -32,7 +32,7 @@ const router = useRouter();
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     
-    button {
+    a {
 	--hue: 220;
 	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
 	--bg-dark: oklch(15% 0.1 var(--hue) / 0.75);

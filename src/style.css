@@ -32,12 +32,13 @@ body {
 button {
     color: white;
 }
-/*
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
 }
-*/
 
 .nav-button {
     --radi: 9999px;
@@ -131,6 +132,7 @@ main {
 
 .hyperlink {
     color: blue;
+    text-decoration: underline;
 }
 
 /*
