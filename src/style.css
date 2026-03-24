@@ -97,7 +97,7 @@ h1 {
     border-radius: 10px;
 }
 
-aside {
+#main-nav {
     display: flex;
     flex-direction: column;
     gap: 10px;

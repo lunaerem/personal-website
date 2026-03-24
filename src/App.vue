@@ -26,7 +26,7 @@ function toggleVideo() {
     <video id="background-video" muted loop autoplay playsinline webkit-playsinline>
 	<source src="./assets/BackgroundAnim.mp4" type="video/mp4">
     </video>
-    <aside class="transparent-background">
+    <nav id="main-nav" class="transparent-background">
 	<h2 class="title-underscore">Navigation</h2>
 	<button @click="router.push('/');" class="nav-button">Home</button>
 	<button @click="router.push('/about');" class="nav-button">About Me</button>
@@ -36,7 +36,7 @@ function toggleVideo() {
 	    <p @click="toggleVideo()" id="motion-button">Reduce Motion</p>
 	    <button style="width: 100%" onclick="window.open('https://github.com/lunaerem', '_blank')" class="nav-button">My GitHub</button>
 	</div>
-    </aside>
+    </nav>
     <main class="transparent-background">
 	<h1 class="title-underscore">{{ $route.meta.title }}</h1>
 	<RouterView class="content" />
