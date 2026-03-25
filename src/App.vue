@@ -34,7 +34,7 @@ function toggleVideo() {
 	<RouterLink to="/projects" class="nav-button">Projects</RouterLink>
 	<RouterLink to="/credits" class="nav-button">Credits</RouterLink>
 	<div id="final-button">
-	    <button @click="toggleVideo()" id="motion-button">Reduce Motion</button>
+	    <button @click="toggleVideo()" id="motion-button" class="text-btn">Reduce Motion</button>
 	    <a href="https://github.com/lunaerem" target="_blank" class="nav-button">My GitHub</a>
 	</div>
     </nav>
@@ -50,16 +50,6 @@ function toggleVideo() {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-#motion-button {
-    cursor: pointer;
-    margin: 0;
-    text-align: center;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    font-size: 16px;
 }
 
 #background-video {

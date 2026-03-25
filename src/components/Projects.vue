@@ -30,17 +30,21 @@ const selectFromProjects = () => {
 	    </div>
 	</div>
 	<div id="pag-header">
-	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(0)">
-		<path d="m14 16-4-4 4-4" :stroke="pageNum != 1 ? 'white' : 'grey'" 
-		stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
-	    </svg>
+	    <button class="text-btn" @click="clickPagination(0)">
+		<svg viewBox="0 0 24 24" fill="none">
+		    <path d="m14 16-4-4 4-4" :stroke="pageNum != 1 ? 'white' : 'grey'" 
+		    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
+		</svg>
+	    </button>
 	    <div style="display: flex; align-items: center;">
 		<p style="display: inline; margin: 0">Page {{ pageNum }} of {{ finalPage }}</p>
 	    </div>
-	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(1)">
-		<path d="m10 16 4-4-4-4" :stroke="pageNum < finalPage ? 'white' : 'grey'" 
-		stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
-	    </svg>
+	    <button class="text-btn" @click="clickPagination(1)">
+		<svg viewBox="0 0 24 24" fill="none">
+		    <path d="m10 16 4-4-4-4" :stroke="pageNum < finalPage ? 'white' : 'grey'" 
+		    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
+		</svg>
+	    </button>
 	</div>
     </div>
 </template>
@@ -72,12 +76,13 @@ const selectFromProjects = () => {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-height: 1.5lh;
+    min-height: 1.5lh;
     justify-content: center;
 }
 
 svg {
     cursor: pointer;
+    height: 100%;
 }
 
 svg:hover {
