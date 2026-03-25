@@ -57,7 +57,6 @@ a {
     --bg-dark: oklch(15% 0.1 var(--hue) / 0.75);
     --button-foreground: oklch(15% 0.05 var(--hue));
 
-    background-color: var(--button-background);
     background: linear-gradient(to bottom, var(--bg-dark), var(--button-background));
     border: 2px solid var(--button-background);
     border-radius: var(--radi);
@@ -67,6 +66,8 @@ a {
     padding: 1ex 1em;
     position: relative;
     transition: box-shadow 0.25s;
+    background-clip: padding-box;
+    background-repeat:no-repeat;
 
     &::after {
 	content: "";
