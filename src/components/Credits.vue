@@ -29,6 +29,9 @@
 		included under the <a target="_blank" class="hyperlink" href="https://opensource.org/license/MIT">MIT License</a></li>
 		<li><a target="_blank" class="hyperlink" href="https://router.vuejs.org/">Vue Router</a>,
 		included under the <a target="_blank" class="hyperlink" href="https://opensource.org/license/MIT">MIT License</a></li>
+		<li><a target="_blank" class="hyperlink" href="https://fonts.google.com/specimen/Open+Sans">Open Sans Font</a>,
+		included under the <a target="_blank" class="hyperlink" href="https://openfontlicense.org/open-font-license-official-text/">
+		SIL Open Font License Version 1.1</a></li>
 	    </ul>
 	</div>
     </div>
