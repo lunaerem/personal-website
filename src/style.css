@@ -21,11 +21,8 @@
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  place-content: center;
-  height: 100dvh;
+    margin: 0; 
+    height: 100dvh;
 }
 
 button {
@@ -105,8 +102,7 @@ a {
 }
 
 #main-nav {
-    display: flex;
-    gap: 10px;
+    
     padding: 0.5rem;
     margin-top: var(--vert-margin);
     margin-bottom: var(--vert-margin);
@@ -141,6 +137,12 @@ main {
 }
 
 @media (orientation: landscape) {
+    body {
+	display: flex;
+	place-items: center;
+	place-content: center;
+    }
+
     #app {
 	display: grid;
 	grid-template-columns: 15% 1fr;
@@ -149,7 +151,14 @@ main {
     }
 
     #main-nav {
+	display: flex;
+	gap: 10px;	
 	flex-direction: column;
+    }
+
+    #edu-div {
+	margin-left: 1rem;
+	float: right;
     }
 }
 
@@ -157,9 +166,13 @@ main {
     #app {
 	display: flex;
 	flex-direction: column;
+	height: 100dvh;
     }
     
     #main-nav {
-	flex-direction: row;
+    }
+
+    main {
+	flex-grow: 1;
     }
 }

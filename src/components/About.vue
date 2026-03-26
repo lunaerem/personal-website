@@ -3,7 +3,7 @@
 
 <template>
     <div id="about-wrapper">
-		<div id="edu-div">
+	<div id="edu-div">
 	    <h2 style="margin-top: 0">Education</h2>
 	    <h3>University</h3> 
 	    <hr class="content-border" />
@@ -41,8 +41,6 @@
     color: white; 
     border-radius: 10px;
     padding: 1rem;
-    float: right;
-    margin-left: 1rem;
 }
 
 .content-border {
