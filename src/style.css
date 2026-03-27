@@ -102,7 +102,6 @@ a {
 }
 
 #main-nav {
-    
     padding: 0.5rem;
     margin-top: var(--vert-margin);
     margin-bottom: var(--vert-margin);
@@ -160,6 +159,12 @@ main {
 	margin-left: 1rem;
 	float: right;
     }
+
+    #router-nav {
+	display: flex;	
+	flex-direction: column;
+	gap: 10px;
+    }
 }
 
 @media (orientation: portrait) {
@@ -168,11 +173,16 @@ main {
 	flex-direction: column;
 	height: 100dvh;
     }
-    
-    #main-nav {
-    }
 
     main {
 	flex-grow: 1;
+    }
+
+    #router-nav {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	margin-bottom: 10px;
     }
 }

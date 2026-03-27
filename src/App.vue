@@ -29,10 +29,12 @@ function toggleVideo() {
     </video>
     <nav id="main-nav" class="transparent-background">
 	<h2 class="title-underscore">Navigation</h2>
-	<RouterLink to="/" class="nav-button">Home</RouterLink>
-	<RouterLink to="/about" class="nav-button">About Me</RouterLink>
-	<RouterLink to="/projects" class="nav-button">Projects</RouterLink>
-	<RouterLink to="/credits" class="nav-button">Credits</RouterLink>
+	<div id="router-nav">
+	    <RouterLink to="/" class="nav-button">Home</RouterLink>
+	    <RouterLink to="/about" class="nav-button">About Me</RouterLink>
+	    <RouterLink to="/projects" class="nav-button">Projects</RouterLink>
+	    <RouterLink to="/credits" class="nav-button">Credits</RouterLink>
+	</div>
 	<div id="final-button">
 	    <button @click="toggleVideo()" id="motion-button" class="text-btn">Reduce Motion</button>
 	    <a href="https://github.com/lunaerem" target="_blank" class="nav-button">My GitHub</a>
@@ -61,5 +63,4 @@ function toggleVideo() {
     left: 0px;
     top: -50px;
 }
-
 </style>
