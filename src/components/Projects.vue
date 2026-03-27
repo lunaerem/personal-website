@@ -4,28 +4,44 @@ import { ref } from 'vue';
 import { projects } from '../projects.ts'
 
 const pageNum = ref(1);
-const finalPage = ref(Math.ceil(projects.length / 3));
+const finalPage = ref(Math.ceil(window.matchMedia("(orientation: landscape)").matches ? projects.length / 3 : projects.length / 2));
 
 const clickPagination = (dir: number) => {
     if(!dir && pageNum.value != 1) {
 	pageNum.value--;
     }
-    else if(dir && pageNum.value * 3 < projects.length) {
+    else if(dir && pageNum.value * 3 < projects.length && 
+	    window.matchMedia("(orientation: landscape)").matches) {
+	pageNum.value++;
+    }
+    else if(dir && pageNum.value * 2 < projects.length &&
+	    window.matchMedia("(orientation: portrait)").matches) {
 	pageNum.value++;
     }
 }
 
-const selectFromProjects = () => {
-    let filtered = projects.slice(pageNum.value * 3 - 3, pageNum.value * 3).filter(obj => obj != undefined);
-    return filtered; 
+const selectFromProjects = (orientation: boolean) => {
+    let multiplier = orientation ? 3 : 2;
+
+    return projects.slice(pageNum.value * multiplier - multiplier, pageNum.value * multiplier).filter(obj => obj != undefined); 
 }
+
+window.screen.orientation.addEventListener("change", () => {
+    pageNum.value = 1;
+    finalPage.value = Math.ceil(event.target.type == "landscape-primary" ? projects.length / 3 : projects.length / 2);
+});
 </script>
 
 <template>
     <div class="flex-wrapper"> 
 	<p>Some of the various projects that I have worked on:</p>	
-	<div id="wrapper">
-	    <div class="project" v-for="project in selectFromProjects()">
+	<div id="proj-wrapper" class="landscape">
+	    <div class="project" v-for="project in selectFromProjects(true)">
+		<Listing v-bind="project" />
+	    </div>
+	</div>
+	<div id="proj-wrapper" class="portrait">
+	    <div class="project" v-for="project in selectFromProjects(false)">
 		<Listing v-bind="project" />
 	    </div>
 	</div>
@@ -50,11 +66,10 @@ const selectFromProjects = () => {
 </template>
 
 <style scoped>
-#wrapper {
+#proj-wrapper {
     flex-grow: 1; 
-    display: grid;
+    display: none;
     gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     margin-bottom: 0.5em;
 }
@@ -90,6 +105,26 @@ svg:hover {
     path {
 	stroke: grey;
 	filter: drop-shadow(3px 2px 6px rgb(0 0 0 / 1));
+    }
+}
+
+@media (orientation: landscape) {
+    #proj-wrapper {
+	grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .landscape {
+	display: grid !important;
+    }
+}
+
+@media (orientation: portrait) {
+    #proj-wrapper {
+	grid-template-columns: 1fr 1fr;
+    }
+
+    .portrait {
+	display: grid !important;
     }
 }
 </style>
