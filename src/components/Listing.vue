@@ -1,9 +1,5 @@
 <script setup lang="ts">
 const props = defineProps<{ title?: string, text?: string, src?: string, alt?: string, chips?: string[], link?: string }>()
-
-function openLink() {
-    window.open(props.link, '_blank');
-}
 </script>
 
 <template>
@@ -17,7 +13,7 @@ function openLink() {
 	    <div id="chip-container">
 		<div v-for="(chip, index) in props.chips" class="chip" :class="chip">{{ chips![index] }}</div>
 	    </div>
-	    <button class="nav-button" @click="openLink()">Go to Project</button>
+	    <a class="nav-button" target="_blank" :href="link">Go to Project</a>
 	</div>
     </div>
 </template>

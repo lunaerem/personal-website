@@ -4,53 +4,76 @@ import { ref } from 'vue';
 import { projects } from '../projects.ts'
 
 const pageNum = ref(1);
-const finalPage = ref(Math.ceil(projects.length / 3));
+const finalPage = ref(Math.ceil(window.matchMedia("(orientation: landscape)").matches ? projects.length / 3 : projects.length / 2));
 
 const clickPagination = (dir: number) => {
     if(!dir && pageNum.value != 1) {
 	pageNum.value--;
     }
-    else if(dir && pageNum.value * 3 < projects.length) {
+    else if(dir && pageNum.value * 3 < projects.length && 
+	    window.matchMedia("(orientation: landscape)").matches) {
+	pageNum.value++;
+    }
+    else if(dir && pageNum.value * 2 < projects.length &&
+	    window.matchMedia("(orientation: portrait)").matches) {
 	pageNum.value++;
     }
 }
 
-const selectFromProjects = () => {
-    let filtered = projects.slice(pageNum.value * 3 - 3, pageNum.value * 3).filter(obj => obj != undefined);
-    return filtered; 
+const selectFromProjects = (orientation: boolean) => {
+    let multiplier = orientation ? 3 : 2;
+
+    return projects.slice(pageNum.value * multiplier - multiplier, pageNum.value * multiplier).filter(obj => obj != undefined); 
 }
+
+window.screen.orientation.addEventListener("change", () => {
+    pageNum.value = 1;
+    if(event != undefined && event.target != null) {
+	finalPage.value = Math.ceil((event.target as HTMLInputElement).type == "landscape-primary" ? projects.length / 3 : projects.length / 2);
+    } else {
+	finalPage.value = 1;
+    }
+});
 </script>
 
 <template>
     <div class="flex-wrapper"> 
 	<p>Some of the various projects that I have worked on:</p>	
-	<div id="wrapper">
-	    <div class="project" v-for="project in selectFromProjects()">
+	<div id="proj-wrapper" class="landscape">
+	    <div class="project" v-for="project in selectFromProjects(true)">
+		<Listing v-bind="project" />
+	    </div>
+	</div>
+	<div id="proj-wrapper" class="portrait">
+	    <div class="project" v-for="project in selectFromProjects(false)">
 		<Listing v-bind="project" />
 	    </div>
 	</div>
 	<div id="pag-header">
-	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(0)">
-		<path d="m14 16-4-4 4-4" :stroke="pageNum != 1 ? 'white' : 'grey'" 
-		stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
-	    </svg>
+	    <button class="text-btn" @click="clickPagination(0)">
+		<svg viewBox="0 0 24 24" fill="none">
+		    <path d="m14 16-4-4 4-4" :stroke="pageNum != 1 ? 'white' : 'grey'" 
+		    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
+		</svg>
+	    </button>
 	    <div style="display: flex; align-items: center;">
 		<p style="display: inline; margin: 0">Page {{ pageNum }} of {{ finalPage }}</p>
 	    </div>
-	    <svg viewBox="0 0 24 24" fill="none" @click="clickPagination(1)">
-		<path d="m10 16 4-4-4-4" :stroke="pageNum < finalPage ? 'white' : 'grey'" 
-		stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
-	    </svg>
+	    <button class="text-btn" @click="clickPagination(1)">
+		<svg viewBox="0 0 24 24" fill="none">
+		    <path d="m10 16 4-4-4-4" :stroke="pageNum < finalPage ? 'white' : 'grey'" 
+		    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
+		</svg>
+	    </button>
 	</div>
     </div>
 </template>
 
 <style scoped>
-#wrapper {
+#proj-wrapper {
     flex-grow: 1; 
-    display: grid;
+    display: none;
     gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     margin-bottom: 0.5em;
 }
@@ -72,12 +95,13 @@ const selectFromProjects = () => {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-height: 1.5lh;
+    min-height: 1.5lh;
     justify-content: center;
 }
 
 svg {
     cursor: pointer;
+    height: 100%;
 }
 
 svg:hover {
@@ -85,6 +109,26 @@ svg:hover {
     path {
 	stroke: grey;
 	filter: drop-shadow(3px 2px 6px rgb(0 0 0 / 1));
+    }
+}
+
+@media (orientation: landscape) {
+    #proj-wrapper {
+	grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .landscape {
+	display: grid !important;
+    }
+}
+
+@media (orientation: portrait) {
+    #proj-wrapper {
+	grid-template-columns: 1fr 1fr;
+    }
+
+    .portrait {
+	display: grid !important;
     }
 }
 </style>

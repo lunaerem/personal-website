@@ -3,11 +3,11 @@
 
 <template>
     <div id="about-wrapper">
-		<div id="edu-div">
+	<div id="edu-div">
 	    <h2 style="margin-top: 0">Education</h2>
 	    <h3>University</h3> 
 	    <hr class="content-border" />
-	    <ul>
+	    <ul style="margin-bottom: 0">
 		<li>Graduated from a 4-year University</li>
 		<li>Bachelor's Degree in Software Engineering</li>
 		<li>Minored in Music Technology</li>
@@ -24,7 +24,7 @@
 		I also have an amateur-level interest in music making and mixing, which is why I minored 
 		in Music Technology—all of the cool tech stuff behind the creation of music—during university.</p>
 	    <hr class="content-border" />
-	    <p><span class="underline">Languages I use Often:</span> C, C++, CSS, HTML, TypeScript</p>
+	    <p><u>Languages I use Often:</u> C, C++, CSS, HTML, TypeScript</p>
     </div>
 </template>
 
@@ -41,16 +41,10 @@
     color: white; 
     border-radius: 10px;
     padding: 1rem;
-    float: right;
-    margin-left: 1rem;
 }
 
 .content-border {
     border: 0;
     border-top: 2px solid #ffffff;
-}
-
-.underline {
-    text-decoration: underline;
 }
 </style>
