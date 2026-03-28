@@ -28,7 +28,11 @@ const selectFromProjects = (orientation: boolean) => {
 
 window.screen.orientation.addEventListener("change", () => {
     pageNum.value = 1;
-    finalPage.value = Math.ceil(event.target.type == "landscape-primary" ? projects.length / 3 : projects.length / 2);
+    if(event != undefined && event.target != null) {
+	finalPage.value = Math.ceil((event.target as HTMLInputElement).type == "landscape-primary" ? projects.length / 3 : projects.length / 2);
+    } else {
+	finalPage.value = 1;
+    }
 });
 </script>
 

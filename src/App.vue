@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
-
 function toggleVideo() {
     let video = document.getElementById('background-video') as HTMLVideoElement;
     let button = document.getElementById('motion-button');

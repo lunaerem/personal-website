@@ -1,9 +1,5 @@
 <script setup lang="ts">
 const props = defineProps<{ title?: string, text?: string, src?: string, alt?: string, chips?: string[], link?: string }>()
-
-function openLink() {
-    window.open(props.link, '_blank');
-}
 </script>
 
 <template>
