@@ -1,7 +1,7 @@
 # Lunaerem's Personal Website
 A [Frutiger Aero](https://en.wikipedia.org/wiki/Frutiger_Aero)-inspired personal website for myself that acts as a portfolio and place where I can upload and showcase some of my projects.
 
-Image here
+![Screenshot of Lunaerem's Personal Website's Home page, which has a navigation bar and buttons to different pages.](./cover.png)
 
 ## Usage
 The live website can be found [here](https://lunaerem.github.io/personal-website/).
