@@ -51,18 +51,16 @@ window.screen.orientation.addEventListener("change", () => {
 	</div>
 	<div id="pag-header">
 	    <button class="text-btn" @click="clickPagination(0)">
-		<svg viewBox="0 0 24 24" fill="none">
-		    <path d="m14 16-4-4 4-4" :stroke="pageNum != 1 ? 'white' : 'grey'" 
-		    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
+		<svg viewBox="0 0 24 24" fill="none" :class="pageNum != 1 ? 'a-enabled' : 'a-disabled'">
+		    <path d="m14 16 -4 -4 4 -4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
 		</svg>
 	    </button>
 	    <div style="display: flex; align-items: center;">
 		<p style="display: inline; margin: 0">Page {{ pageNum }} of {{ finalPage }}</p>
 	    </div>
 	    <button class="text-btn" @click="clickPagination(1)">
-		<svg viewBox="0 0 24 24" fill="none">
-		    <path d="m10 16 4-4-4-4" :stroke="pageNum < finalPage ? 'white' : 'grey'" 
-		    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="arrow" />
+		<svg viewBox="0 0 24 24" fill="none" :class="pageNum < finalPage ? 'a-enabled' : 'a-disabled'">
+		    <path d="m10 16 4 -4 -4 -4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
 		</svg>
 	    </button>
 	</div>
@@ -100,15 +98,29 @@ window.screen.orientation.addEventListener("change", () => {
 }
 
 svg {
-    cursor: pointer;
     height: 100%;
 }
 
-svg:hover {
-    
+.a-enabled {
+    cursor: pointer;
+
+    path {
+	stroke: white;
+    }
+
+    &:hover {
+	path {
+	    stroke: grey;
+	    filter: drop-shadow(3px 2px 6px rgb(0 0 0 / 1));
+	}
+    }
+}
+
+.a-disabled {
+    cursor: not-allowed;
+
     path {
 	stroke: grey;
-	filter: drop-shadow(3px 2px 6px rgb(0 0 0 / 1));
     }
 }
 
