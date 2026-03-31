@@ -39,6 +39,10 @@ window.screen.orientation.addEventListener("change", () => {
 <template>
     <div class="flex-wrapper"> 
 	<p>Some of the various projects that I have worked on:</p>	
+	<div id="search-placement">
+	    <input type="search" value="" placeholder="Search" />
+	    <button />
+	</div>
 	<div id="proj-wrapper" class="landscape">
 	    <div class="project" v-for="project in selectFromProjects(true)">
 		<Listing v-bind="project" />
@@ -68,6 +72,11 @@ window.screen.orientation.addEventListener("change", () => {
 </template>
 
 <style scoped>
+#search-placement {
+    display: flex;
+    justify-content: flex-end;
+}
+
 #proj-wrapper {
     flex-grow: 1; 
     display: none;
