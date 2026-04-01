@@ -48,13 +48,13 @@ a {
 
 .nav-button {
     --radi: 9999px;
-    --hue: 220;
+    --hue: 190;
     --button-background: oklch(75% 0.1 var(--hue) / 0.8);
-    --bg-dark: oklch(15% 0.1 var(--hue) / 0.75);
-    --button-foreground: oklch(15% 0.05 var(--hue));
+    --bg-dark: oklch(25% 0.1 var(--hue) / 0.6);
+    --border: oklch(75% 0.1 var(--hue) / 1);
 
     background: linear-gradient(to bottom, var(--bg-dark), var(--button-background));
-    border: 2px solid var(--button-background);
+    border: 2px solid var(--border);
     border-radius: var(--radi);
     cursor: pointer;
     font-weight: 500;
@@ -63,7 +63,9 @@ a {
     position: relative;
     transition: box-shadow 0.25s;
     background-clip: padding-box;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
+    user-select: none;
+    -webkit-user-select: none;
 
     &::after {
 	content: "";
