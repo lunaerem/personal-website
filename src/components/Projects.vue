@@ -91,6 +91,7 @@ window.screen.orientation.addEventListener("change", () => {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.75);
 
     img {
 	width: 100%;
