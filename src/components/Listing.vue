@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{ title?: string, text?: string, src?: string, alt?: string, chips?: string[], link?: string }>()
+const props = defineProps<{ title?: string, text?: string, src?: string, alt?: string, chips?: string[], link?: string, source?: string }>()
 </script>
 
 <template>
@@ -13,7 +13,10 @@ const props = defineProps<{ title?: string, text?: string, src?: string, alt?: s
 	    <div id="chip-container">
 		<div v-for="(chip, index) in props.chips" class="chip" :class="chip">{{ chips![index] }}</div>
 	    </div>
-	    <a class="nav-button" target="_blank" :href="link">Go to Project</a>
+	    <div id="project-lnk-container">
+		<a v-if="link != null" class="nav-button" target="_blank" :href="link">Project</a>
+		<a class="nav-button" target="_blank" :href="source">Source</a>
+	    </div>
 	</div>
     </div>
 </template>
@@ -38,6 +41,11 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 6px;
+}
+
+#project-lnk-container {
+    display: flex;
+    flex-direction: row;
 }
 
 #chip-container {
@@ -84,5 +92,11 @@ img {
 .QT {
     background-color: rgba(255, 192, 203, 0.75);
     color: black;
+}
+
+@media (orientation: portrait) {
+    #project-lnk-container {
+	flex-direction: column;
+    }
 }
 </style>

@@ -5,7 +5,8 @@ export const projects = [
 	"src": "images/Personal.png", 
 	"alt": "Personal Website Screenshot", 
 	"chips": ["HTML", "CSS", "Vue", "TypeScript"], 
-	"link": "https://github.com/lunaerem/personal-website" 
+	"link": "https://lunaerem.github.io/personal-website/",
+	"source": "https://github.com/lunaerem/personal-website"
     },
     { 
 	"title": "yt-download-controller", 
@@ -13,7 +14,7 @@ export const projects = [
 	"src": "images/YT-Controller.PNG", 
 	"alt": "yt-download-controller Screenshot", 
 	"chips": ["C"],
-	"link": "https://github.com/lunaerem/yt-download-controller" 
+	"source": "https://github.com/lunaerem/yt-download-controller"
     },
     { 
 	"title": "series-tracker", 
@@ -21,7 +22,8 @@ export const projects = [
 	"src": "", 
 	"alt": "series-tracker Screenshot", 
 	"chips": ["HTML", "CSS", "Vue", "TypeScript"],
-	"link": "https://github.com/lunaerem/series-tracker"
+	"link": "https://lunaerem.github.io/series-tracker/",
+	"source": "https://github.com/lunaerem/series-tracker"
     },
     { 
 	"title": "Minesweeper C++", 
@@ -29,7 +31,7 @@ export const projects = [
 	"src": "images/Minesweeper.PNG", 
 	"alt": "Minesweeper C++ Screenshot", 
 	"chips": ["Cpp"],
-	"link": "https://github.com/lunaerem/minesweeper-cpp"
+	"source": "https://github.com/lunaerem/minesweeper-cpp"
     },
     { 
 	"title": "Praxis", 
@@ -37,6 +39,6 @@ export const projects = [
 	"src": "", 
 	"alt": "Praxis Screenshot", 
 	"chips": ["Cpp", "QT"],
-	"link": "https://github.com/lunaerem/praxis"
+	"source": "https://github.com/lunaerem/praxis"
     },
 ]
