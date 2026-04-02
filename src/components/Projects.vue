@@ -40,8 +40,8 @@ window.screen.orientation.addEventListener("change", () => {
     <div class="flex-wrapper"> 
 	<p>Some of the various projects that I have worked on:</p>	
 	<div id="search-placement">
-	    <input type="search" value="" placeholder="Search" />
-	    <button />
+	    <input type="search" value="" placeholder="Search" id="search-input" />
+	    <button id="search-btn">Icon</button>
 	</div>
 	<div id="proj-wrapper" class="landscape">
 	    <div class="project" v-for="project in selectFromProjects(true)">
@@ -75,6 +75,33 @@ window.screen.orientation.addEventListener("change", () => {
 #search-placement {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+#search-input {
+    background: rgba(180, 255, 248, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    transition: all 0.25s;
+
+    &::placeholder {
+	font-style: italic;
+	color: white;
+    }
+
+    &:hover {
+	box-shadow: inset 0 0 20px #2dab96, 0 0 10px 2px #ffffffbf;
+    }
+}
+
+#search-btn {
+    background: rgba(180, 255, 248, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &:hover {
+	background: rgba(180, 255, 248, 0.55);
+    }
 }
 
 #proj-wrapper {
