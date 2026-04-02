@@ -6,16 +6,20 @@
 	<h2>This is my personal website! Feel free to explore!</h2>
 	<nav id="wrapper">
 	    <RouterLink to="/about">
-		<img alt="About Me" />
+		<img alt="About Me Button Icon" src="../assets/vue.svg">
+		About Me
 	    </RouterLink>
 	    <RouterLink to="/projects">
-		<img alt="Projects" />
+		<img alt="My Projects Button Icon" />
+		My Projects
 	    </RouterLink>
 	    <RouterLink to="/credits">
-		<img alt="Credits" />
+		<img alt="Credits Button Icon" />
+		Credits
 	    </RouterLink>
 	    <a target="_blank" href="https://github.com/lunaerem">
-		<img alt="My GitHub" />
+		<img alt="My GitHub Button Icon" />
+		My GitHub
 	    </a>
 	</nav>
     </div>
@@ -42,6 +46,10 @@
 	background: var(--bg-dark);
 	border: 3px solid var(--button-background);
 	transition: box-shadow 0.25s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	&:hover {
 	    box-shadow: inset 0 0 20px #2dab96, 0 0 10px 2px #ffffffbf;
@@ -50,6 +58,10 @@
 	&:active {
 	    transform: translateY(1px);
 	}
+    }
+
+    img {
+
     }
 }
 </style>
