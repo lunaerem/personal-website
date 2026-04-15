@@ -3,7 +3,11 @@
 
 <template>
     <div class="flex-wrapper"> 
-	<h2>This is my personal website! Feel free to explore!</h2>
+	<h2>This is my personal website!</h2>
+	<p style="margin-top: 0">In short, I am a programmer, developer, modder, musician, and
+	organisational enthusiast, but feel free to take a look around to
+	get a deeper understanding of who I am and the kinds of projects
+	I work on!</p>
 	<nav id="wrapper">
 	    <RouterLink to="/about">
 		<img alt="About Me Button Icon" src="../assets/vue.svg">
