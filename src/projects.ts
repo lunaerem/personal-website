@@ -9,8 +9,8 @@ export const projects = [
 	"source": "https://github.com/lunaerem/personal-website"
     },
     { 
-	"title": "yt-download-controller", 
-	"text": "A CLI tool to make using yt-dlp a breeze.", 
+	"title": "direct-dlp", 
+	"text": "A lightweight CLI/GUI tool to make using yt-dlp a breeze.", 
 	"src": "images/YT-Controller.PNG", 
 	"alt": "yt-download-controller Screenshot", 
 	"chips": ["C"],
@@ -19,7 +19,7 @@ export const projects = [
     { 
 	"title": "series-tracker", 
 	"text": "A website for tracking and categorising information about various video game series. ", 
-	"src": "", 
+	"src": "images/Tracker.png", 
 	"alt": "series-tracker Screenshot", 
 	"chips": ["HTML", "CSS", "Vue", "TypeScript"],
 	"link": "https://lunaerem.github.io/series-tracker/",
