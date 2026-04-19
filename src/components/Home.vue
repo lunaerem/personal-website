@@ -10,19 +10,19 @@
 	I work on!</p>
 	<nav id="wrapper">
 	    <RouterLink to="/about">
-		<img alt="About Me Button Icon" src="../assets/vue.svg">
+		<img alt="About Me Button Icon" src="../assets/About.svg" />
 		About Me
 	    </RouterLink>
 	    <RouterLink to="/projects">
-		<img alt="My Projects Button Icon" />
+		<img alt="My Projects Button Icon" src="../assets/Projects.svg" />
 		My Projects
 	    </RouterLink>
 	    <RouterLink to="/credits">
-		<img alt="Credits Button Icon" />
+		<img alt="Credits Button Icon" src="../assets/Credits.svg" />
 		Credits
 	    </RouterLink>
 	    <a target="_blank" href="https://github.com/lunaerem">
-		<img alt="My GitHub Button Icon" />
+		<img alt="My GitHub Button Icon" src="../assets/Git.svg" />
 		My GitHub
 	    </a>
 	</nav>
@@ -65,7 +65,8 @@
     }
 
     img {
-
+	min-width: 30%;
+	max-width: 40%;
     }
 }
 </style>
