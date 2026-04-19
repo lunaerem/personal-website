@@ -41,7 +41,7 @@ window.screen.orientation.addEventListener("change", () => {
 	<p>Some of the various projects that I have worked on:</p>	
 	<div id="search-placement">
 	    <input type="search" value="" placeholder="Search" id="search-input" />
-	    <button id="search-btn">Icon</button>
+	    <button id="search-btn" />
 	</div>
 	<div id="proj-wrapper" class="landscape">
 	    <div class="project" v-for="project in selectFromProjects(true)">
@@ -95,12 +95,16 @@ window.screen.orientation.addEventListener("change", () => {
 
 #search-btn {
     background: rgba(180, 255, 248, 0.15);
+    background-image: url("../assets/Search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.75);
     cursor: pointer;
     transition: all 0.25s;
 
     &:hover {
-	background: rgba(180, 255, 248, 0.55);
+	background-color: rgba(180, 255, 248, 0.55);
     }
 }
 
