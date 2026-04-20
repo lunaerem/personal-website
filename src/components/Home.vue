@@ -3,19 +3,27 @@
 
 <template>
     <div class="flex-wrapper"> 
-	<h2>This is my personal website! Feel free to explore!</h2>
+	<h2>This is my personal website!</h2>
+	<p style="margin-top: 0">In short, I am a programmer, developer, modder, musician, and
+	organisational enthusiast, but feel free to take a look around to
+	get a deeper understanding of who I am and the kinds of projects
+	I work on!</p>
 	<nav id="wrapper">
 	    <RouterLink to="/about">
-		<img alt="About Me" />
+		<img alt="About Me Button Icon" src="../assets/About.svg" />
+		About Me
 	    </RouterLink>
 	    <RouterLink to="/projects">
-		<img alt="Projects" />
+		<img alt="My Projects Button Icon" src="../assets/Projects.svg" />
+		My Projects
 	    </RouterLink>
 	    <RouterLink to="/credits">
-		<img alt="Credits" />
+		<img alt="Credits Button Icon" src="../assets/Credits.svg" />
+		Credits
 	    </RouterLink>
 	    <a target="_blank" href="https://github.com/lunaerem">
-		<img alt="My GitHub" />
+		<img alt="My GitHub Button Icon" src="../assets/Git.svg" />
+		My GitHub
 	    </a>
 	</nav>
     </div>
@@ -38,10 +46,13 @@
 	cursor: pointer;
 	background: transparent;
 	border-radius: 10px;
-	background-color: var(--button-background);
-	background: var(--bg-dark);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55), var(--button-background) 40%, var(--bg-dark));
 	border: 3px solid var(--button-background);
 	transition: box-shadow 0.25s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	&:hover {
 	    box-shadow: inset 0 0 20px #2dab96, 0 0 10px 2px #ffffffbf;
@@ -50,6 +61,11 @@
 	&:active {
 	    transform: translateY(1px);
 	}
+    }
+
+    img {
+	min-width: 30%;
+	max-width: 40%;
     }
 }
 </style>
