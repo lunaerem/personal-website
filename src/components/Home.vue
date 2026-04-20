@@ -10,19 +10,19 @@
 	I work on!</p>
 	<nav id="wrapper">
 	    <RouterLink to="/about">
-		<img alt="About Me Button Icon" src="../assets/About.svg" />
+		<img alt="About Me Button Icon" src="../assets/About.svg" alt="About Button Icon" />
 		About Me
 	    </RouterLink>
 	    <RouterLink to="/projects">
-		<img alt="My Projects Button Icon" src="../assets/Projects.svg" />
+		<img alt="My Projects Button Icon" src="../assets/Projects.svg" alt="Projects Button Icon" />
 		My Projects
 	    </RouterLink>
 	    <RouterLink to="/credits">
-		<img alt="Credits Button Icon" src="../assets/Credits.svg" />
+		<img alt="Credits Button Icon" src="../assets/Credits.svg" alt="Credits Button Icon" />
 		Credits
 	    </RouterLink>
 	    <a target="_blank" href="https://github.com/lunaerem">
-		<img alt="My GitHub Button Icon" src="../assets/Git.svg" />
+		<img alt="My GitHub Button Icon" src="../assets/Git.svg" alt="GitHub Button Icon" />
 		My GitHub
 	    </a>
 	</nav>

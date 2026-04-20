@@ -28,25 +28,25 @@ function toggleVideo() {
 	<div id="router-nav">
 	    <RouterLink to="/" class="nav-button">
 		<div class="btn-icon">
-		    <img src="./assets/Home.svg" />
+		    <img src="./assets/Home.svg" alt="Home Button Icon" />
 		</div>
 		Home
 	    </RouterLink>
 	    <RouterLink to="/about" class="nav-button">
 		<div class="btn-icon">
-		    <img src="./assets/About.svg" />
+		    <img src="./assets/About.svg" alt="About Button Icon" />
 		</div>
 		About Me
 	    </RouterLink>
 	    <RouterLink to="/projects" class="nav-button">
 		<div class="btn-icon">
-		    <img src="./assets/Projects.svg" />
+		    <img src="./assets/Projects.svg" alt="Projects Button Icon" />
 		</div>
 		Projects
 	    </RouterLink>
 	    <RouterLink to="/credits" class="nav-button">
 		<div class="btn-icon">
-		    <img src="./assets/Credits.svg" />
+		    <img src="./assets/Credits.svg" alt="Credits Button Icon" />
 		</div>
 		Credits
 	    </RouterLink>
@@ -55,7 +55,7 @@ function toggleVideo() {
 	    <button @click="toggleVideo()" id="motion-button" class="text-btn">Reduce Motion</button>
 	    <a href="https://github.com/lunaerem" target="_blank" class="nav-button">
 		<div class="btn-icon">
-		    <img src="./assets/Git.svg" />
+		    <img src="./assets/Git.svg" alt="GitHub Button Icon" />
 		</div>
 		My GitHub
 	    </a>
