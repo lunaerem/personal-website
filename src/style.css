@@ -194,3 +194,9 @@ main {
 	margin-bottom: 10px;
     }
 }
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    #app {
+	max-width: 99%;
+    }
+}
