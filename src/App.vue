@@ -26,14 +26,39 @@ function toggleVideo() {
     <nav id="main-nav" class="transparent-background">
 	<h2 class="title-underscore">Navigation</h2>
 	<div id="router-nav">
-	    <RouterLink to="/" class="nav-button">Home</RouterLink>
-	    <RouterLink to="/about" class="nav-button">About Me</RouterLink>
-	    <RouterLink to="/projects" class="nav-button">Projects</RouterLink>
-	    <RouterLink to="/credits" class="nav-button">Credits</RouterLink>
+	    <RouterLink to="/" class="nav-button">
+		<div class="btn-icon">
+		    <img src="./assets/Home.svg" />
+		</div>
+		Home
+	    </RouterLink>
+	    <RouterLink to="/about" class="nav-button">
+		<div class="btn-icon">
+		    <img src="./assets/About.svg" />
+		</div>
+		About Me
+	    </RouterLink>
+	    <RouterLink to="/projects" class="nav-button">
+		<div class="btn-icon">
+		    <img src="./assets/Projects.svg" />
+		</div>
+		Projects
+	    </RouterLink>
+	    <RouterLink to="/credits" class="nav-button">
+		<div class="btn-icon">
+		    <img src="./assets/Credits.svg" />
+		</div>
+		Credits
+	    </RouterLink>
 	</div>
 	<div id="final-button">
 	    <button @click="toggleVideo()" id="motion-button" class="text-btn">Reduce Motion</button>
-	    <a href="https://github.com/lunaerem" target="_blank" class="nav-button">My GitHub</a>
+	    <a href="https://github.com/lunaerem" target="_blank" class="nav-button">
+		<div class="btn-icon">
+		    <img src="./assets/Git.svg" />
+		</div>
+		My GitHub
+	    </a>
 	</div>
     </nav>
     <main class="transparent-background">

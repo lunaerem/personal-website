@@ -36,7 +36,7 @@ button {
     border: 0;
     padding: 0;
     background: transparent;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 a {
@@ -44,6 +44,14 @@ a {
     color: white;
     text-align: center;
     box-sizing: border-box;
+}
+
+.btn-icon {
+    max-height: 1.5em;
+
+    img {
+	max-height: 1.5em;
+    }
 }
 
 .nav-button {
