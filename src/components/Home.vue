@@ -46,8 +46,7 @@
 	cursor: pointer;
 	background: transparent;
 	border-radius: 10px;
-	background-color: var(--button-background);
-	background: var(--bg-dark);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55), var(--button-background) 40%, var(--bg-dark));
 	border: 3px solid var(--button-background);
 	transition: box-shadow 0.25s;
 	display: flex;
