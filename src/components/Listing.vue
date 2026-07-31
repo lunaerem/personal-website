@@ -82,34 +82,31 @@ img {
 }
 
 .HTML {
-  background-color: rgba(255, 0, 0, 0.75);
+  background-color: rgba(227, 76, 38, 1);
 }
 
 .CSS {
-  background-color: rgba(0, 0, 255, 0.75);
+  background-color: rgba(102, 51, 153, 1);
 }
 
 .TypeScript {
-  background-color: rgba(255, 255, 0, 0.75);
-  color: black;
+  background-color: rgba(49, 121, 198, 1);
 }
 
 .Vue {
-  background-color: rgba(0, 255, 0, 0.75);
+  background-color: rgba(65, 184, 131, 1);
 }
 
 .C {
-  background-color: rgba(0, 255, 255, 0.75);
-  color: black;
+  background-color: rgba(0, 68, 130, 1);
 }
 
 .Cpp {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 89, 156, 1);
 }
 
 .QT {
-  background-color: rgba(255, 192, 203, 0.75);
-  color: black;
+  background-color: rgba(44, 222, 133, 1);
 }
 
 @media (orientation: portrait) {
