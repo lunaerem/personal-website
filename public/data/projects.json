@@ -10,7 +10,7 @@
       "source": "https://github.com/lunaerem/personal-website"
     },
     {
-      "title": "direct-dlp",
+      "title": "Direct-DLP",
       "text": "A lightweight CLI/GUI tool to make using yt-dlp a breeze.",
       "src": "images/YT-Controller.PNG",
       "alt": "yt-download-controller Screenshot",
@@ -18,13 +18,13 @@
       "source": "https://github.com/lunaerem/yt-download-controller"
     },
     {
-      "title": "series-tracker",
+      "title": "Lunaerem's Completion Compendium",
       "text": "A website for tracking and categorising information about various video game series. ",
       "src": "images/Tracker.png",
-      "alt": "series-tracker Screenshot",
+      "alt": "Lunaerem's Completion Compendium Screenshot",
       "chips": ["HTML", "CSS", "Vue", "TypeScript"],
-      "link": "https://lunaerem.github.io/series-tracker/",
-      "source": "https://github.com/lunaerem/series-tracker"
+      "link": "https://lunaerem.github.io/completion-compendium/",
+      "source": "https://github.com/lunaerem/completion-compendium"
     },
     {
       "title": "Minesweeper C++",
@@ -35,8 +35,23 @@
       "source": "https://github.com/lunaerem/minesweeper-cpp"
     },
     {
+      "title": "MBOX-Parser",
+      "text": "A lightweight CLI tool written in C for parsing MBOX archives.",
+      "src": "images/MBOX.png",
+      "alt": "MBOX-Parser Screenshot",
+      "chips": ["C"],
+      "source": "https://github.com/lunaerem/MBOX-Parser"
+    },
+    {
+      "title": "Message Depot",
+      "text": "A graphical user interface to make reading, viewing, and editing message archives from various services easier.",
+      "src": "images/MDepot.png",
+      "alt": "Message Depot Screenshot",
+      "chips": ["HTML", "CSS", "Vue", "TypeScript"]
+    },
+    {
       "title": "Praxis",
-      "text": "A custom video game launcher and wishlist manager. ",
+      "text": "A custom video game launcher and wishlist manager.",
       "src": "",
       "alt": "Praxis Screenshot",
       "chips": ["Cpp", "QT"],
