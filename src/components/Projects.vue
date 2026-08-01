@@ -28,12 +28,6 @@ window.screen.orientation.addEventListener("change", () => {
   } else {
     projsPerPage.value = 2;
   }
-  /*pageNum.value = 1;
-    if(event != undefined && event.target != null) {
-	finalPage.value = Math.ceil((event.target as HTMLInputElement).type == "landscape-primary" ? projects.length / 3 : projects.length / 2);
-    } else {
-	finalPage.value = 1;
-    }*/
 });
 
 function updateSearch() {
@@ -57,6 +51,8 @@ function clickRight() {
 
 onMounted(() => {
   searchBar = document.getElementById("search-input");
+  projsPerPage.value =
+    window.screen.orientation.type == "landscape-primary" ? 3 : 2;
 
   fetch("./data/projects.json")
     .then((response) => response.json())
@@ -70,11 +66,13 @@ onMounted(() => {
 
 <template>
   <div class="flex-wrapper">
-    <p>Some of the various projects that I have worked on:</p>
-    <form id="search-placement" @submit="updateSearch()">
-      <input type="search" value="" placeholder="Search" id="search-input" />
-      <button id="search-btn" type="submit" />
-    </form>
+    <div id="form-wrapper">
+      <p>Some of the various projects that I have worked on:</p>
+      <form id="search-placement" @submit="updateSearch()">
+        <input type="search" value="" placeholder="Search" id="search-input" />
+        <button id="search-btn" type="submit" />
+      </form>
+    </div>
     <div id="proj-wrapper">
       <div class="project" v-for="project in paginatedProjects" v-if="!loading">
         <Listing v-bind="project" />
@@ -87,11 +85,11 @@ onMounted(() => {
           fill="none"
           :class="pageNum != 1 ? 'a-enabled' : 'a-disabled'"
         >
-          <path
-            d="m14 16 -4 -4 4 -4"
+          <polyline
+            points="14,16 10,12 14,8"
+            stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
           />
         </svg>
       </button>
@@ -111,11 +109,11 @@ onMounted(() => {
               : 'a-disabled'
           "
         >
-          <path
-            d="m10 16 4 -4 -4 -4"
+          <polyline
+            points="10,16 14,12 10,8"
+            stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
           />
         </svg>
       </button>
@@ -124,10 +122,19 @@ onMounted(() => {
 </template>
 
 <style scoped>
+#form-wrapper {
+  display: flex;
+
+  p {
+    margin: 0;
+  }
+}
+
 #search-placement {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
+  flex-grow: 1;
 }
 
 #search-input {
@@ -200,12 +207,12 @@ svg {
 .a-enabled {
   cursor: pointer;
 
-  path {
+  polyline {
     stroke: white;
   }
 
   &:hover {
-    path {
+    polyline {
       stroke: grey;
       filter: drop-shadow(3px 2px 6px rgb(0 0 0 / 1));
     }
@@ -215,7 +222,7 @@ svg {
 .a-disabled {
   cursor: not-allowed;
 
-  path {
+  polyline {
     stroke: grey;
   }
 }
@@ -224,11 +231,21 @@ svg {
   #proj-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  #form-wrapper {
+    flex-direction: row;
+  }
 }
 
 @media (orientation: portrait) {
   #proj-wrapper {
     grid-template-columns: 1fr 1fr;
+  }
+
+  #form-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }
 </style>
