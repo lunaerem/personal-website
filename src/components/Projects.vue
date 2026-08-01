@@ -82,6 +82,9 @@ onMounted(() => {
       <div class="project" v-for="project in paginatedProjects" v-if="!loading">
         <Listing v-bind="project" />
       </div>
+      <p v-if="!loading && paginatedProjects.length == 0">
+        No Results for Given Search
+      </p>
     </div>
     <div id="pag-header" v-if="!loading">
       <button class="text-btn" @click="clickLeft()">
