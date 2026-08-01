@@ -22,6 +22,12 @@ const paginatedProjects = computed(() => {
 });
 
 window.screen.orientation.addEventListener("change", () => {
+  pageNum.value = 1;
+  if ((event.target as HTMLInputElement).type == "landscape-primary") {
+    projsPerPage.value = 3;
+  } else {
+    projsPerPage.value = 2;
+  }
   /*pageNum.value = 1;
     if(event != undefined && event.target != null) {
 	finalPage.value = Math.ceil((event.target as HTMLInputElement).type == "landscape-primary" ? projects.length / 3 : projects.length / 2);
@@ -31,6 +37,7 @@ window.screen.orientation.addEventListener("change", () => {
 });
 
 function updateSearch() {
+  pageNum.value = 1;
   searchQuery.value = searchBar.value;
 }
 
@@ -214,22 +221,14 @@ svg {
 }
 
 @media (orientation: landscape) {
-  /*#proj-wrapper {
+  #proj-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
-  .landscape {
-    display: grid !important;
-  }*/
 }
 
 @media (orientation: portrait) {
-  /*#proj-wrapper {
+  #proj-wrapper {
     grid-template-columns: 1fr 1fr;
   }
-
-  .portrait {
-    display: grid !important;
-  }*/
 }
 </style>

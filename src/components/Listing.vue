@@ -11,7 +11,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <img :src="src" :alt="alt" />
+  <img :src="src" :alt="alt" draggable="false" />
   <div class="project-info">
     <div class="project-text">
       <h3 class="title-underscore">{{ title }}</h3>
@@ -24,12 +24,18 @@ const props = defineProps<{
         </div>
       </div>
       <div id="project-lnk-container">
-        <a v-if="link != null" class="nav-button" target="_blank" :href="link"
+        <a
+          v-if="link != null"
+          class="nav-button"
+          target="_blank"
+          :href="link"
+          draggable="false"
           >Project</a
         >
         <a
           v-if="source != null"
           class="nav-button"
+          draggable="false"
           target="_blank"
           :href="source"
           >Source</a
