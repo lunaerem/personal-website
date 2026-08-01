@@ -4,16 +4,18 @@ import { ref, computed, onMounted } from "vue";
 
 const pageNum = ref(1);
 const projsPerPage = ref(3);
-const projects = ref(null);
+const projects: any = ref(null);
 const searchQuery = ref("");
 const loading = ref(true);
 
-let searchBar = null;
+let searchBar: any = null;
 
 const searchProjects = computed(() => {
-  return projects.value.filter((project) =>
-    project.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
-  );
+  if (projects.value != null) {
+    return projects.value.filter((project: any) =>
+      project.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
+    );
+  }
 });
 
 const paginatedProjects = computed(() => {
@@ -23,7 +25,10 @@ const paginatedProjects = computed(() => {
 
 window.screen.orientation.addEventListener("change", () => {
   pageNum.value = 1;
-  if ((event.target as HTMLInputElement).type == "landscape-primary") {
+  if (
+    event != undefined &&
+    (event.target as HTMLInputElement).type == "landscape-primary"
+  ) {
     projsPerPage.value = 3;
   } else {
     projsPerPage.value = 2;
