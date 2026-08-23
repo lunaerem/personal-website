@@ -149,6 +149,7 @@ onMounted(() => {
   background: rgba(180, 255, 248, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.75);
   transition: all 0.25s;
+  color: white;
 
   &::placeholder {
     font-style: italic;
@@ -159,6 +160,10 @@ onMounted(() => {
     box-shadow:
       inset 0 0 20px #2dab96,
       0 0 10px 2px #ffffffbf;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
