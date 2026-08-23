@@ -13,7 +13,7 @@
       "title": "Direct-DLP",
       "text": "A lightweight CLI/GUI tool to make using yt-dlp a breeze.",
       "src": "images/YT-Controller.PNG",
-      "alt": "yt-download-controller Screenshot",
+      "alt": "Direct-DLP Screenshot",
       "chips": ["C"],
       "source": "https://github.com/lunaerem/direct-dlp"
     },
