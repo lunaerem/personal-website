@@ -7,6 +7,7 @@ const projsPerPage = ref(3);
 const projects: any = ref(null);
 const searchQuery = ref("");
 const loading = ref(true);
+const failure = ref(false);
 
 let searchBar: any = null;
 
@@ -65,7 +66,10 @@ onMounted(() => {
       projects.value = data.projects;
       loading.value = false;
     })
-    .catch(console.error);
+    .catch((error: unknown) => {
+      console.error(error.message);
+      failure.value = true;
+    });
 });
 </script>
 
@@ -77,6 +81,12 @@ onMounted(() => {
         <input type="search" value="" placeholder="Search" id="search-input" />
         <button id="search-btn" type="submit" />
       </form>
+    </div>
+    <div v-if="failure">
+      <p>
+        Failed to fetch project data. Please check your network connection or
+        try again later.
+      </p>
     </div>
     <div id="proj-wrapper">
       <div class="project" v-for="project in paginatedProjects" v-if="!loading">
