@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
+
 function toggleVideo() {
   let video = document.getElementById("background-video") as HTMLVideoElement;
   let button = document.getElementById("motion-button");
@@ -26,6 +28,7 @@ function toggleVideo() {
     autoplay
     playsinline
     webkit-playsinline
+    oncontextmenu="return false;"
   >
     <source src="./assets/BackgroundAnim.mp4" type="video/mp4" />
     Your browser does not support the video tag.
@@ -86,11 +89,14 @@ function toggleVideo() {
 
 #background-video {
   z-index: -1;
+  pointer-events: none;
   position: fixed;
   min-height: 100dvh;
   min-width: 100dvw;
   aspect-ratio: auto;
   left: 0px;
   top: -50px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 </style>
