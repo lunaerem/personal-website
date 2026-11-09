@@ -65,7 +65,7 @@ img {
 
 .nav-button {
   --radi: 9999px;
-  --hue: 190;
+  --hue: 220;
   --button-background: oklch(75% 0.1 var(--hue) / 0.8);
   --bg-dark: oklch(25% 0.1 var(--hue) / 0.6);
   --border: oklch(75% 0.1 var(--hue) / 1);
@@ -161,8 +161,16 @@ main {
 }
 
 .hyperlink {
-  color: blue;
+  color: #0000ee;
   text-decoration: underline;
+
+  &:hover {
+    color: #800080;
+  }
+
+  &:active {
+    color: #ff0000;
+  }
 }
 
 @media (orientation: landscape) {

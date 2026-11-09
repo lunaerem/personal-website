@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-
 function toggleVideo() {
   let video = document.getElementById("background-video") as HTMLVideoElement;
   let button = document.getElementById("motion-button");
