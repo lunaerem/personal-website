@@ -38,7 +38,7 @@
   grid-template-rows: 1fr 1fr;
 
   a {
-    --hue: 220;
+    --hue: 200;
     --button-background: oklch(75% 0.1 var(--hue) / 0.8);
     --bg-dark: oklch(15% 0.1 var(--hue) / 0.75);
     --button-foreground: oklch(15% 0.05 var(--hue));

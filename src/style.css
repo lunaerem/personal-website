@@ -65,7 +65,7 @@ img {
 
 .nav-button {
   --radi: 9999px;
-  --hue: 220;
+  --hue: 200;
   --button-background: oklch(75% 0.1 var(--hue) / 0.8);
   --bg-dark: oklch(25% 0.1 var(--hue) / 0.6);
   --border: oklch(75% 0.1 var(--hue) / 1);

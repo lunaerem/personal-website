@@ -73,7 +73,7 @@ onMounted(() => {
   <div class="flex-wrapper">
     <div id="form-wrapper">
       <p>Some of the various projects that I have worked on:</p>
-      <form id="search-placement" @submit="updateSearch()">
+      <form id="search-placement" @submit.prevent="updateSearch()">
         <input type="search" value="" placeholder="Search" id="search-input" />
         <button id="search-btn" type="submit" />
       </form>
