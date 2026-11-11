@@ -271,4 +271,16 @@ svg {
     gap: 1rem;
   }
 }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .text-btn {
+    height: 43px;
+    width: 43px;
+
+    svg {
+      height: 43px;
+      width: 43px;
+    }
+  }
+}
 </style>
