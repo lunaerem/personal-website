@@ -135,6 +135,7 @@ img {
   padding: 0.5rem;
   margin-top: var(--vert-margin);
   margin-bottom: var(--vert-margin);
+  z-index: 1;
 }
 
 main {
@@ -173,7 +174,7 @@ main {
   }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 850px) {
   body {
     display: flex;
     place-items: center;
@@ -203,9 +204,17 @@ main {
     flex-direction: column;
     gap: 10px;
   }
+
+  #nav-dropdown {
+    display: none;
+  }
+
+  #final-button {
+    flex-direction: column;
+  }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) or ((orientation: landscape) and (max-width: 850px)) {
   #app {
     display: flex;
     flex-direction: column;
@@ -217,11 +226,20 @@ main {
   }
 
   #router-nav {
-    display: grid;
+    display: none;
+    /*display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;*/
+  }
+
+  #nav-src {
+    display: none;
+  }
+
+  #final-button {
+    flex-direction: row;
   }
 }
 

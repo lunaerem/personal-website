@@ -16,6 +16,10 @@ function toggleVideo() {
     }
   }
 }
+
+function testFunction() {
+  document.getElementById("dropdown-inner").classList.toggle("visible");
+}
 </script>
 
 <template>
@@ -63,7 +67,21 @@ function toggleVideo() {
       <button @click="toggleVideo()" id="motion-button" class="text-btn">
         Reduce Motion
       </button>
-      <a href="https://github.com/lunaerem" target="_blank" class="nav-button">
+      <div id="nav-dropdown">
+        <button class="nav-button" @click="testFunction()">Menu</button>
+        <div id="dropdown-inner">
+          <RouterLink to="/home" class="nav-button">Home</RouterLink>
+          <RouterLink to="/about" class="nav-button">About Me</RouterLink>
+          <RouterLink to="/projects" class="nav-button">Projects</RouterLink>
+          <RouterLink to="/credits" class="nav-button">Credits</RouterLink>
+        </div>
+      </div>
+      <a
+        href="https://github.com/lunaerem"
+        target="_blank"
+        class="nav-button"
+        id="nav-src"
+      >
         <div class="btn-icon">
           <img src="./assets/Git.svg" alt="GitHub Button Icon" />
         </div>
@@ -81,7 +99,6 @@ function toggleVideo() {
 #final-button {
   margin-top: auto;
   display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
@@ -96,5 +113,42 @@ function toggleVideo() {
   top: -50px;
   user-select: none;
   -webkit-user-select: none;
+}
+
+#nav-dropdown {
+  margin-left: auto;
+}
+
+#dropdown-inner {
+  display: none;
+  position: absolute;
+  right: 0;
+  /*background-color: grey;*/
+  width: 100%;
+  flex-direction: column;
+  gap: 0.25lh;
+  /*border-radius: 10px;*/
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(13, 138, 140, 0.75);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  color: white;
+  border-radius: 20px;
+
+  a {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 850px) and (orientation: landscape) {
+  nav {
+    h2.title-underscore {
+      font-size: 20px;
+    }
+  }
+}
+
+.visible {
+  display: flex !important;
 }
 </style>
