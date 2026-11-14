@@ -20,6 +20,20 @@ function toggleVideo() {
 function toggleDropdown() {
   document.getElementById("dropdown-inner").classList.toggle("visible");
 }
+
+//Function that tests where the user clicked and closes the nav dropdown if applicable
+window.onclick = function (event) {
+  if (!event.target.matches(".nav-button")) {
+    let selected = document.getElementById("dropdown-inner");
+    if (selected.classList.contains("visible")) {
+      selected.classList.remove("visible");
+    }
+  }
+};
+
+/*
+window.screen.orientation.addEventListener("change", () => {});
+*/
 </script>
 
 <template>
