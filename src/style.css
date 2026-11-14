@@ -50,6 +50,11 @@ a {
   box-sizing: border-box;
 }
 
+img {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .btn-icon {
   max-height: 1.5em;
 
@@ -60,17 +65,17 @@ a {
 
 .nav-button {
   --radi: 9999px;
-  --hue: 220;
+  --hue: 200;
   --button-background: oklch(75% 0.1 var(--hue) / 0.8);
-  --bg-dark: oklch(15% 0.1 var(--hue) / 0.75);
-  --button-foreground: oklch(15% 0.05 var(--hue));
+  --bg-dark: oklch(25% 0.1 var(--hue) / 0.6);
+  --border: oklch(75% 0.1 var(--hue) / 1);
 
   background: linear-gradient(
     to bottom,
     var(--bg-dark),
     var(--button-background)
   );
-  border: 2px solid var(--button-background);
+  border: 2px solid var(--border);
   border-radius: var(--radi);
   cursor: pointer;
   font-weight: 500;
@@ -80,6 +85,8 @@ a {
   transition: box-shadow 0.25s;
   background-clip: padding-box;
   background-repeat: no-repeat;
+  user-select: none;
+  -webkit-user-select: none;
 
   &::after {
     content: "";
@@ -128,6 +135,7 @@ a {
   padding: 0.5rem;
   margin-top: var(--vert-margin);
   margin-bottom: var(--vert-margin);
+  z-index: 1;
 }
 
 main {
@@ -154,11 +162,19 @@ main {
 }
 
 .hyperlink {
-  color: blue;
+  color: #0000ee;
   text-decoration: underline;
+
+  &:hover {
+    color: #800080;
+  }
+
+  &:active {
+    color: #ff0000;
+  }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 850px) {
   body {
     display: flex;
     place-items: center;
@@ -188,9 +204,17 @@ main {
     flex-direction: column;
     gap: 10px;
   }
+
+  #nav-dropdown {
+    display: none;
+  }
+
+  #final-button {
+    flex-direction: column;
+  }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) or ((orientation: landscape) and (max-width: 850px)) {
   #app {
     display: flex;
     flex-direction: column;
@@ -202,11 +226,20 @@ main {
   }
 
   #router-nav {
-    display: grid;
+    display: none;
+    /*display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;*/
+  }
+
+  #nav-src {
+    display: none;
+  }
+
+  #final-button {
+    flex-direction: row;
   }
 }
 

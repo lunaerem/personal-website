@@ -7,6 +7,7 @@ const projsPerPage = ref(3);
 const projects: any = ref(null);
 const searchQuery = ref("");
 const loading = ref(true);
+const failure = ref(false);
 
 let searchBar: any = null;
 
@@ -65,7 +66,10 @@ onMounted(() => {
       projects.value = data.projects;
       loading.value = false;
     })
-    .catch(console.error);
+    .catch((error: any) => {
+      console.error(error.message);
+      failure.value = true;
+    });
 });
 </script>
 
@@ -73,10 +77,16 @@ onMounted(() => {
   <div class="flex-wrapper">
     <div id="form-wrapper">
       <p>Some of the various projects that I have worked on:</p>
-      <form id="search-placement" @submit="updateSearch()">
+      <form id="search-placement" @submit.prevent="updateSearch()">
         <input type="search" value="" placeholder="Search" id="search-input" />
         <button id="search-btn" type="submit" />
       </form>
+    </div>
+    <div v-if="failure">
+      <p>
+        Failed to fetch project data. Please check your network connection or
+        try again later.
+      </p>
     </div>
     <div id="proj-wrapper">
       <div class="project" v-for="project in paginatedProjects" v-if="!loading">
@@ -149,6 +159,7 @@ onMounted(() => {
   background: rgba(180, 255, 248, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.75);
   transition: all 0.25s;
+  color: white;
 
   &::placeholder {
     font-style: italic;
@@ -159,6 +170,10 @@ onMounted(() => {
     box-shadow:
       inset 0 0 20px #2dab96,
       0 0 10px 2px #ffffffbf;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -254,6 +269,18 @@ svg {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .text-btn {
+    height: 43px;
+    width: 43px;
+
+    svg {
+      height: 43px;
+      width: 43px;
+    }
   }
 }
 </style>
