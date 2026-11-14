@@ -17,7 +17,7 @@ function toggleVideo() {
   }
 }
 
-function testFunction() {
+function toggleDropdown() {
   document.getElementById("dropdown-inner").classList.toggle("visible");
 }
 </script>
@@ -38,27 +38,43 @@ function testFunction() {
   <nav id="main-nav" class="transparent-background">
     <h2 class="title-underscore">Navigation</h2>
     <div id="router-nav">
-      <RouterLink to="/" class="nav-button">
+      <RouterLink to="/" class="nav-button" draggable="false">
         <div class="btn-icon">
-          <img src="./assets/Home.svg" alt="Home Button Icon" />
+          <img
+            src="./assets/Home.svg"
+            alt="Home Button Icon"
+            draggable="false"
+          />
         </div>
         Home
       </RouterLink>
-      <RouterLink to="/about" class="nav-button">
+      <RouterLink to="/about" class="nav-button" draggable="false">
         <div class="btn-icon">
-          <img src="./assets/About.svg" alt="About Button Icon" />
+          <img
+            src="./assets/About.svg"
+            alt="About Button Icon"
+            draggable="false"
+          />
         </div>
         About Me
       </RouterLink>
-      <RouterLink to="/projects" class="nav-button">
+      <RouterLink to="/projects" class="nav-button" draggable="false">
         <div class="btn-icon">
-          <img src="./assets/Projects.svg" alt="Projects Button Icon" />
+          <img
+            src="./assets/Projects.svg"
+            alt="Projects Button Icon"
+            draggable="false"
+          />
         </div>
         Projects
       </RouterLink>
-      <RouterLink to="/credits" class="nav-button">
+      <RouterLink to="/credits" class="nav-button" draggable="false">
         <div class="btn-icon">
-          <img src="./assets/Credits.svg" alt="Credits Button Icon" />
+          <img
+            src="./assets/Credits.svg"
+            alt="Credits Button Icon"
+            draggable="false"
+          />
         </div>
         Credits
       </RouterLink>
@@ -68,12 +84,20 @@ function testFunction() {
         Reduce Motion
       </button>
       <div id="nav-dropdown">
-        <button class="nav-button" @click="testFunction()">Menu</button>
+        <button class="nav-button" @click="toggleDropdown()">Menu</button>
         <div id="dropdown-inner">
-          <RouterLink to="/home" class="nav-button">Home</RouterLink>
-          <RouterLink to="/about" class="nav-button">About Me</RouterLink>
-          <RouterLink to="/projects" class="nav-button">Projects</RouterLink>
-          <RouterLink to="/credits" class="nav-button">Credits</RouterLink>
+          <RouterLink to="/home" class="nav-button" draggable="false"
+            >Home</RouterLink
+          >
+          <RouterLink to="/about" class="nav-button" draggable="false"
+            >About Me</RouterLink
+          >
+          <RouterLink to="/projects" class="nav-button" draggable="false"
+            >Projects</RouterLink
+          >
+          <RouterLink to="/credits" class="nav-button" draggable="false"
+            >Credits</RouterLink
+          >
         </div>
       </div>
       <a
@@ -81,9 +105,14 @@ function testFunction() {
         target="_blank"
         class="nav-button"
         id="nav-src"
+        draggable="false"
       >
         <div class="btn-icon">
-          <img src="./assets/Git.svg" alt="GitHub Button Icon" />
+          <img
+            src="./assets/Git.svg"
+            alt="GitHub Button Icon"
+            draggable="false"
+          />
         </div>
         My GitHub
       </a>

@@ -9,20 +9,36 @@
       deeper understanding of who I am and the kinds of projects I work on!
     </p>
     <nav id="wrapper">
-      <RouterLink to="/about">
-        <img alt="About Me Button Icon" src="../assets/About.svg" />
+      <RouterLink to="/about" draggable="false">
+        <img
+          alt="About Me Button Icon"
+          src="../assets/About.svg"
+          draggable="false"
+        />
         About Me
       </RouterLink>
-      <RouterLink to="/projects">
-        <img alt="My Projects Button Icon" src="../assets/Projects.svg" />
+      <RouterLink to="/projects" draggable="false">
+        <img
+          alt="My Projects Button Icon"
+          src="../assets/Projects.svg"
+          draggable="false"
+        />
         My Projects
       </RouterLink>
-      <RouterLink to="/credits">
-        <img alt="Credits Button Icon" src="../assets/Credits.svg" />
+      <RouterLink to="/credits" draggable="false">
+        <img
+          alt="Credits Button Icon"
+          src="../assets/Credits.svg"
+          draggable="false"
+        />
         Credits
       </RouterLink>
-      <a target="_blank" href="https://github.com/lunaerem">
-        <img alt="My GitHub Button Icon" src="../assets/Git.svg" />
+      <a target="_blank" href="https://github.com/lunaerem" draggable="false">
+        <img
+          alt="My GitHub Button Icon"
+          src="../assets/Git.svg"
+          draggable="false"
+        />
         My GitHub
       </a>
     </nav>

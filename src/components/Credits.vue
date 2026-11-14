@@ -6,12 +6,17 @@
     <div id="vv-header">
       <h2 class="title-underscore">Proudly made using Vite and Vue</h2>
       <div id="logo-header">
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" class="logo" alt="Vite logo" />
+        <a href="https://vite.dev" target="_blank" draggable="false">
+          <img src="/vite.svg" class="logo" alt="Vite logo" draggable="false" />
         </a>
         <p style="font-size: 10vh; margin: 0" id="plus">+</p>
-        <a href="https://vuejs.org/" target="_blank">
-          <img src="../assets/vue.svg" class="logo vue" alt="Vue logo" />
+        <a href="https://vuejs.org/" target="_blank" draggable="false">
+          <img
+            src="../assets/vue.svg"
+            class="logo vue"
+            alt="Vue logo"
+            draggable="false"
+          />
         </a>
       </div>
     </div>
