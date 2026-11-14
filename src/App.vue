@@ -18,14 +18,21 @@ function toggleVideo() {
 }
 
 function toggleDropdown() {
-  document.getElementById("dropdown-inner").classList.toggle("visible");
+  let inner = document.getElementById("dropdown-inner");
+  if (inner != null) {
+    inner.classList.toggle("visible");
+  }
 }
 
 //Function that tests where the user clicked and closes the nav dropdown if applicable
 window.onclick = function (event) {
-  if (!event.target.matches(".nav-button")) {
+  if (
+    event.target &&
+    event.target instanceof Element &&
+    !event.target.matches(".nav-button")
+  ) {
     let selected = document.getElementById("dropdown-inner");
-    if (selected.classList.contains("visible")) {
+    if (selected && selected.classList.contains("visible")) {
       selected.classList.remove("visible");
     }
   }

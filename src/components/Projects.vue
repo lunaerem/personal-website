@@ -66,7 +66,7 @@ onMounted(() => {
       projects.value = data.projects;
       loading.value = false;
     })
-    .catch((error: unknown) => {
+    .catch((error: any) => {
       console.error(error.message);
       failure.value = true;
     });
